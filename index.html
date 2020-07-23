@@ -2,30 +2,30 @@
 <html lang="en-us">
 
 <head>
-    <title>Day of Birth Finder</title>
+    <title>Generar Codigo QR JCI Durangor</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Twitter Card-->
-    <meta name="twitter:title" content="Day of Birth Finder">
-    <meta name="twitter:site" content="dob-finder.firebaseapp.com" />
-    <meta name="twitter:creator" content="@iambolajiayo" />
-    <meta name="twitter:description" content="This script checks your Date of Birth and detects the Day of the Week you were born.">
+    <meta name="twitter:title" content="Generar Codigo QR JCI Durango">
+    <meta name="twitter:site" content="jci.com" />
+    <meta name="twitter:creator" content="ccardedi" />
+    <meta name="twitter:description" content="Generar Codigo QR JCI Durango">
     <meta name="twitter:image" content="img/icons/icon-96x96.png">
     <meta name="twitter:card" content="img/icons/icon-96x96.png">
-    <meta name="description" content="This script checks your Date of Birth and detects the Day of the Week you were born.">
+    <meta name="description" content="Generar Codigo QR JCI Durango">
     <!--Open Graph-->
     <meta property="og:image" content="img/icons/icon-96x96.png">
     <meta property="og:title" content="Day of Birth Finder" />
-    <meta name="author" content="Bolaji Ayodeji">
-    <meta property="og:description" content="This script checks your Date of Birth and detects the Day of the Week you were born." />
-    <meta name="author" content="Bolaji Ayodeji">
-    <meta property="og:url" content="dob-finder.firebaseapp.com" />
-    <meta property="og:site_name" content="Day of Birth Finder" />
-    <meta property="og:type" content="Day of Birth Finder" />
+    <meta name="author" content="ccardedi">
+    <meta property="og:description" content="Generar Codigo QR JCI Durango" />
+    <meta name="author" content="ccardedi">
+    <meta property="og:url" content="jci.com" />
+    <meta property="og:site_name" content="Generar Codigo QR JCI Durango" />
+    <meta property="og:type" content="Generar Codigo QR JCI Durango" />
 
     <!-- Google Knowledge Graph card -->
-    <script type='application/ld+json'>
+    <!--<script type='application/ld+json'>
         {
         "@context": "http://www.schema.org",
         "@type": "Day of Birth Finder",
@@ -34,7 +34,7 @@
         "logo": "dob-finder.firebaseapp.com/img/icons/icon-96x96.png",
         "description": "This script checks your Date of Birth and detects the Day of the Week you were born."
         }
-    </script>
+    </script>-->
     <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
@@ -66,28 +66,28 @@
 
                 <div class="form-group">
                     <!--<div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-lg">Day of Birth</span>
-                        </div>
-                        <input type="text" name="day" class="form-control" placeholder="18. ." aria-describedby="inputGroup-sizing-lg">
-                    </div>
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Day of Birth</span>
+        </div>
+        <input type="text" name="day" class="form-control" placeholder="18. ." aria-describedby="inputGroup-sizing-lg">
+    </div>
 
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-lg">Month of Birth</span>
-                        </div>
-                        <input type="text" name="month" class="form-control" placeholder="8. ." aria-describedby="inputGroup-sizing-lg">
-                    </div>
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Month of Birth</span>
+        </div>
+        <input type="text" name="month" class="form-control" placeholder="8. ." aria-describedby="inputGroup-sizing-lg">
+    </div>
 
-                    <div class="input-group input-group-lg">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-lg">Year of Birth</span>
-                        </div>
-                        <input type="text" name="year" class="form-control" placeholder="1970. ." aria-describedby="inputGroup-sizing-lg">
-                    </div>-->
+    <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Year of Birth</span>
+        </div>
+        <input type="text" name="year" class="form-control" placeholder="1970. ." aria-describedby="inputGroup-sizing-lg">
+    </div>-->
                     <!--<div class="alert alert-danger" role="alert">
-                        Autorizo el uso de mis datos para el personal medico el uso responsable de ellos
-                    </div>-->
+        Autorizo el uso de mis datos para el personal medico el uso responsable de ellos
+    </div>-->
 
                     <div class="form-group">
                         <label for="inpt1" style="font-weight:bold">Numero de nomina</label>
@@ -202,8 +202,8 @@
 
 
 
-                    <button type="button" class="btn btn-primary btn-lg" onclick="compute(this.form)">Generar Pase de entrada</button>
-                    <!--<button type="reset" class="btn btn-secondary btn-lg">Clear</button>-->
+                    <button type="button" class="btn btn-primary btn-lg" onclick="GetText();">Generar Pase de entrada</button>
+                    <!--compute(this.form)<button type="reset" class="btn btn-secondary btn-lg">Clear</button>-->
                     <br /><br />
 
                     <div class="form-group">
@@ -212,7 +212,8 @@
                         <div id="qrcode"></div>
                         <script>
                             function GetText() {
-
+                                var nme = document.getElementById('nme');
+                                GenertaQr(nme.value);
                             }
                             function GenertaQr(text) {
                                 var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -229,20 +230,20 @@
                     </div>
 
                     <!--<div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text btn btn-primary" id="basic-addon1">Complete Day of Birth</span>
-                        </div>
-                        <input id="result" type="text" name="result1" class="form-control" aria-describedby="basic-addon1"
-                               readonly>
-                    </div>
+        <div class="input-group-prepend">
+            <span class="input-group-text btn btn-primary" id="basic-addon1">Complete Day of Birth</span>
+        </div>
+        <input id="result" type="text" name="result1" class="form-control" aria-describedby="basic-addon1"
+               readonly>
+    </div>
 
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text btn btn-primary" id="basic-addon1">Final Result</span>
-                        </div>
-                        <input id="result" type="text" name="result2" class="form-control" aria-describedby="basic-addon1"
-                               readonly>
-                    </div>-->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text btn btn-primary" id="basic-addon1">Final Result</span>
+        </div>
+        <input id="result" type="text" name="result2" class="form-control" aria-describedby="basic-addon1"
+               readonly>
+    </div>-->
                 </div>
             </form>
         </div>
