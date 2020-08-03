@@ -88,6 +88,8 @@
                     <!--<div class="alert alert-danger" role="alert">
                         Autorizo el uso de mis datos para el personal medico el uso responsable de ellos
                     </div>-->
+                    <label style="font-weight:bold;width:100%;text-align:center" id="lbldate"></label>
+
 
                     <div class="form-group">
                         <label for="inpt1" style="font-weight:bold">Numero de nomina</label>
@@ -142,25 +144,25 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0" checked>
+                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0">
                             <label class="form-check-label" for="inpt50">
                                 -Fiebre ( temperatura de 37`C o mas)
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0" checked>
+                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0">
                             <label class="form-check-label" for="inpt500">
                                 - Tos
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0" checked>
+                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0">
                             <label class="form-check-label" for="inpt5000">
                                 -Dificultad para respirar
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0" checked>
+                            <input class="form-check-input" type="radio" name="radioq5" id="vl5" value="0">
                             <label class="form-check-label" for="inpt50000">
                                 -Síntomas parecidos a gripe ( escalofríos o dolor de  cuerpo)
                             </label>
@@ -218,13 +220,36 @@
                     <br /><br />
 
                     <div class="form-group">
-                        <label for="inpt6" style="font-weight:bold">Guarde el codigo todos los dias y enseñe a las autoridades de la planta</label>
+                        <label for="inpt6" style="font-weight:bold">El codigo estara activo por 24 horas y enseñe a las autoridades de la planta</label>
 
                         <div id="qrcode"></div>
                         <script>
                             function GetText() {
-                                var nme = document.getElementById('nme');
-                                GenertaQr(nme.value);
+                                var qrcode = document.getElementById('qrcode');
+                                qrcode.innerHTML = '';
+                                var Number = document.getElementById('nme').value;
+                                var Ruta = document.getElementById('rta').value;
+                                var Q0 = document.querySelector('input[name="radioq3"]:checked').value;
+                                var Q1 = document.querySelector('input[name="radioq4"]:checked').value;
+                                var Q2 = document.querySelector('input[name="radioq5"]:checked').value;
+                                var CID = document.getElementById('vst').value;
+                                var DC = document.querySelector('input[name="radioq6"]:checked').value;
+                                var AU = document.querySelector('input[name="radioq7"]:checked').value;
+                                if (DC == 1) {
+                                    alert('No se puede generar el codigo si indica que la informacion no es verdadera');
+                                } else {
+                                    if (AU == 1) {
+                                        alert('No se puede generar el codigo si no autoriza el uso de datos');
+                                    } else {
+                                        if (Number == '' || Number == null) {
+                                            alert('Ingrese numero de nomina');
+                                        } else {
+                                            var cr = Number + '|' + Ruta + '|' + Q0 + '|' + Q1 + '|' + Q2 + '|' + CID + '|' + DC + '|' + AU;
+                                            GenertaQr(cr);
+                                        }
+                                    }
+                                }
+
                             }
                             function GenertaQr(text) {
                                 var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -237,24 +262,15 @@
                                 });
                             }
 
+                            var today = new Date();
+                            var dd = String(today.getDate()).padStart(2, '0');
+                            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                            var yyyy = today.getFullYear();
+
+                            today = mm + '/' + dd + '/' + yyyy;
+                            document.getElementById('lbldate').innerText = today;
                         </script>
                     </div>
-
-                    <!--<div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text btn btn-primary" id="basic-addon1">Complete Day of Birth</span>
-                        </div>
-                        <input id="result" type="text" name="result1" class="form-control" aria-describedby="basic-addon1"
-                               readonly>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text btn btn-primary" id="basic-addon1">Final Result</span>
-                        </div>
-                        <input id="result" type="text" name="result2" class="form-control" aria-describedby="basic-addon1"
-                               readonly>
-                    </div>-->
                 </div>
             </form>
         </div>
